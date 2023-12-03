@@ -1,0 +1,30 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "default",
+            "generator": "Ninja",
+            "displayName": "Ninja Config",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang++",
+                "CMAKE_CXX_STANDARD": "20"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "Debug",
+            "displayName": "Build (Debug)",
+            "configurePreset": "default",
+            "configuration": "Debug"
+        },
+        {
+            "name": "Release",
+            "displayName": "Build (Relese)",
+            "configurePreset": "default",
+            "configuration": "Release"
+        }
+    ]
+}
