@@ -22,7 +22,7 @@
         },
         {
             "name": "Release",
-            "displayName": "Build (Relese)",
+            "displayName": "Build (Release)",
             "configurePreset": "default",
             "configuration": "Release"
         }

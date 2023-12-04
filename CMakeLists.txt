@@ -5,9 +5,10 @@ project(AoC
 )
 
 set(days 
-    01
-    02
-    03
+    day-01
+    day-02
+    day-03
+    day-04
 )
 
 foreach(day ${days})
