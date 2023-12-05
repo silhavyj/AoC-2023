@@ -5,10 +5,6 @@
 #include <iostream>
 #include <algorithm>
 
-#ifdef max
-    #undef max
-#endif
-
 std::vector<std::string> Split(const std::string& str, char c)
 {
     std::vector<std::string> parts;

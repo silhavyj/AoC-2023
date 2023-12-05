@@ -5,10 +5,31 @@
 #include <iostream>
 #include <unordered_map>
 
-const std::array<std::string, 9> words{ "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
-const std::array<std::string, 9> words_reversed{
-    "eno", "owt", "eerht", "ruof", "evif", "xis", "neves", "thgie", "enin"
+// clang-format off
+const std::array<std::string, 9> words{ 
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine"
 };
+
+const std::array<std::string, 9> words_reversed{
+    "eno",
+    "owt",
+    "eerht",
+    "ruof",
+    "evif",
+    "xis",
+    "neves",
+    "thgie",
+    "enin"
+};
+// clang-format on
 
 size_t Find_First(const std::string& str)
 {
@@ -97,8 +118,6 @@ int main(int argc, char* argv[])
     {
         const size_t digit_1 = Find_First(line);
         const size_t digit_2 = Find_Last(line);
-
-        // std::cout << digit_1 << ' ' << digit_2 << '\n';
 
         sum += digit_1 * 10 + digit_2;
     }

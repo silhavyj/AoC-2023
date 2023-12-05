@@ -6,9 +6,18 @@
 #include <utility>
 #include <unordered_map>
 
-static constexpr std::array<std::array<int, 2>, 8> direction = {
-    { { -1, -1 }, { -1, 0 }, { -1, 1 }, { 0, 1 }, { 1, 1 }, { 1, 0 }, { 1, -1 }, { 0, -1 } }
-};
+// clang-format off
+static constexpr std::array<std::array<int, 2>, 8> directions = {{
+    { -1, -1 },
+    { -1, 0 },
+    { -1, 1 },
+    { 0, 1 },
+    { 1, 1 },
+    { 1, 0 },
+    { 1, -1 },
+    { 0, -1 } 
+}};
+// clang-format on
 
 int main([[maybe_unused]] int argc, char* argv[])
 {
@@ -73,10 +82,10 @@ int main([[maybe_unused]] int argc, char* argv[])
 
             for (int j = start; j <= stop; ++j)
             {
-                for (size_t k = 0; k < direction.size(); ++k)
+                for (size_t k = 0; k < directions.size(); ++k)
                 {
-                    const int y = i + direction[k][0];
-                    const int x = j + direction[k][1];
+                    const int y = i + directions[k][0];
+                    const int x = j + directions[k][1];
 
                     if (y < 0 || x < 0 || y >= schematic.size() || x >= schematic[0].size())
                     {

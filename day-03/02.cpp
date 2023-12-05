@@ -8,9 +8,18 @@
 #include <unordered_set>
 #include <cassert>
 
-static constexpr std::array<std::array<int, 2>, 8> direction = {
-    { { -1, -1 }, { -1, 0 }, { -1, 1 }, { 0, 1 }, { 1, 1 }, { 1, 0 }, { 1, -1 }, { 0, -1 } }
-};
+// clang-format off
+static constexpr std::array<std::array<int, 2>, 8> directions = {{
+    { -1, -1 },
+    { -1, 0 },
+    { -1, 1 },
+    { 0, 1 },
+    { 1, 1 },
+    { 1, 0 },
+    { 1, -1 },
+    { 0, -1 } 
+}};
+// clang-format on
 
 struct TNumber
 {
@@ -74,7 +83,7 @@ int main([[maybe_unused]] int argc, char* argv[])
     }
 
     std::vector<TNumber> numbers;
-    std::vector<std::pair<int, int>> starts;
+    std::vector<std::pair<int, int>> stars;
 
     for (int i = 0; i < schematic.size(); ++i)
     {
@@ -86,7 +95,7 @@ int main([[maybe_unused]] int argc, char* argv[])
         {
             if (schematic[i][j] == '*')
             {
-                starts.push_back({ i, j });
+                stars.push_back({ i, j });
             }
 
             if (!in_number && std::isdigit(schematic[i][j]))
@@ -110,7 +119,7 @@ int main([[maybe_unused]] int argc, char* argv[])
         }
     }
 
-    for (const auto& [star_y, star_x] : starts)
+    for (const auto& [star_y, star_x] : stars)
     {
         size_t product{ 1 };
         size_t connected_nums{ 0 };
@@ -118,10 +127,10 @@ int main([[maybe_unused]] int argc, char* argv[])
 
         for (const auto& number : numbers)
         {
-            for (size_t k = 0; k < direction.size(); ++k)
+            for (size_t k = 0; k < directions.size(); ++k)
             {
-                const int y = star_y + direction[k][0];
-                const int x = star_x + direction[k][1];
+                const int y = star_y + directions[k][0];
+                const int x = star_x + directions[k][1];
 
                 if (y < 0 || x < 0 || y >= schematic.size() || x >= schematic[0].size())
                 {

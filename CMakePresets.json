@@ -3,7 +3,7 @@
     "configurePresets": [
         {
             "name": "default",
-            "generator": "Ninja",
+            "generator": "Ninja Multi-Config",
             "displayName": "Ninja Config",
             "binaryDir": "${sourceDir}/build",
             "cacheVariables": {

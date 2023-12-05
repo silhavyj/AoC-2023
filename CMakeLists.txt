@@ -1,14 +1,15 @@
 cmake_minimum_required(VERSION 3.2)
 
 project(AoC
-    LANGUAGES CXX
+    LANGUAGES C CXX
 )
 
-set(days 
+set(days
     day-01
     day-02
     day-03
     day-04
+    day-05
 )
 
 foreach(day ${days})
