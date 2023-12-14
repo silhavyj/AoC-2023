@@ -121,7 +121,7 @@ int main(int argc, char* argv[])
 
                         if (image[y][x] == '*')
                         {
-                            distance += 2;
+                            distance += 1'000'000;
                         }
                         else
                         {
