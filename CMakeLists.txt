@@ -14,6 +14,7 @@ set(days
     day-07
     day-08
     day-09
+    day-10
 )
 
 foreach(day ${days})
